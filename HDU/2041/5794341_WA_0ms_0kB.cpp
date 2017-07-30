@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,m,i,j,k,x,y,z,sum;
+	cin>>n;
+	for(i=0;i<n;i++)
+	{
+		cin>>m;sum=0;
+		m=m-1;
+		if(m%2==0)
+		{
+			x=m/2;
+			for(j=2;j<=m;j=j+2)
+			{
+				x=x-2;
+				if(x>j)
+				{
+					z=1;y=1;
+					for(k=1;k<=x;k++)
+						y=y*k;
+					for(k=1;k<=j;k++)
+						z=z*k;
+					sum=sum+y/z;	
+				}
+				else
+				{
+					z=1;y=1;
+					for(k=1;k<=j;k++)
+						z=z*k;
+					for(k=1;k<=x;k++)
+						y=y*k;
+					sum=sum+z/y;
+				}
+			}
+		}
+		else
+		{
+			x=m/2;
+			for(j=1;j<=m;j=j+2)
+			{
+				
+				if(x>j)
+				{
+					z=1;y=1;
+					for(k=1;k<=x;k++)
+						y=y*k;
+					for(k=1;k<=j;k++)
+						z=z*k;
+					sum=sum+y/z;	
+				}
+				else
+				{
+					z=1;y=1;
+					for(k=1;k<=j;k++)
+						z=z*k;
+					for(k=1;k<=x;k++)
+						y=y*k;
+					sum=sum+z/y;
+				}
+				x=x-2;
+			}
+		}
+		cout<<sum<<endl;
+	}
+}

@@ -1,0 +1,27 @@
+#include<cstdio>
+int main()
+{
+	int y,m,d;
+	while(scanf("%d/%d/%d",&y,&m,&d)!=EOF)
+	{
+		int sum=0;
+		if(y%4==0&&m>2)
+		{
+			if(y%400==0)
+				sum+=28;
+			else
+				sum+=29;
+		}
+		else if(m>2)
+			sum+=28;
+		while(--m)
+		{
+			if(m==1||m==3||m==5||m==8||m==10||m==12)
+				sum+=31;
+			if(m==4||m==6||m==7||m==9||m==11)
+				sum+=30;
+		}
+		printf("%d\n",sum+d);
+	}
+	return 0;
+ } 
